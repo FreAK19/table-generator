@@ -58,6 +58,7 @@ body, input, select, textarea {
     border-collapse: collapse;
     text-align: center;
     font-size: 1.8em;
+    margin-bottom: 50px;
 }
 .table tr td {
     border: 2px solid #009688;

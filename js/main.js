@@ -21,10 +21,15 @@ window.onload = function () {
         }
     }
 
-    //  create table
+    //  create table function
 
-    function createTable(rows, cells) {
+    function createTable(rows, cells, caption) {
         var table = document.createElement('table');
+        if (caption) {
+            var cap = document.createElement('caption');
+            cap.innerHTML = 'Table header';
+            table.appendChild(cap);
+        }
         for (let i = 0; i < rows; i += 1) {
             var row = document.createElement('tr');
             for (let i = 0; i < cells; i += 1) {
@@ -33,18 +38,26 @@ window.onload = function () {
             }
             table.appendChild(row);
         }
-        table.className = 'table';
-        table.setAttribute('contenteditable', 'true');
         return table;
     }
 
     var app = document.getElementById('app');
 
-    var createBtn = document.getElementById('creation');
-    createBtn.addEventListener('click', function (event) {
+
+    var buildTable = function (event) {
         event.preventDefault();
         var options = getValue();
-        var table = createTable(options.rows, options.cells);
+        var table = createTable(options.rows, options.cells, options.isCaption);
+        table.className = 'table';
+        table.setAttribute('contenteditable', 'true');
         app.appendChild(table);
-    });
-}
+    }
+
+    var createBtn = document.getElementById('creation');
+    createBtn.addEventListener('click', buildTable, false);
+
+    var form = document.forms[0];
+    form.addEventListener('change', function(event){
+
+    }, false)
+};
