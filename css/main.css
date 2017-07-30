@@ -67,6 +67,10 @@ body, input, select, textarea {
     min-width: 100px;
     padding: 0 10px;
 }
+.table tr td.numeric {
+    background: #f4f4f4;
+    font-weight: bold;
+}
 /* Header */
 
 #header {

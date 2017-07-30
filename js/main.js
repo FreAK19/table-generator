@@ -5,7 +5,6 @@
 
 window.onload = function () {
     //  take values from #option field
-
     function getValue() {
         var rows = document.getElementById('table_row').value || 2;
         var cells = document.getElementById('table_cell').value || 2;
@@ -21,24 +20,36 @@ window.onload = function () {
         }
     }
 
-    //  create table function
-
-    function createTable(rows, cells, caption) {
-        var table = document.createElement('table');
-        if (caption) {
+    //  create table functions
+    function createCaption(table, isCaption) {
+        if (isCaption) {
             var cap = document.createElement('caption');
             cap.innerHTML = 'Table header';
             table.appendChild(cap);
         }
-        for (let i = 0; i < rows; i += 1) {
+        return table;
+    }
+
+    function createFullTable(options) {
+        var table = document.createElement('table');
+        var tab = createCaption(table, options.isCaption);
+        for (var i = 0; i < options.rows; i += 1) {
             var row = document.createElement('tr');
-            for (let i = 0; i < cells; i += 1) {
+            for (var j = 0; j < options.cells; j += 1) {
                 var data = document.createElement('td');
+                if (j === 0 && options.isNumVertical) {
+                    data.innerHTML = i;
+                    data.className = 'numeric';
+                }
+                if (i === 0 && options.isNumHorizontal) {
+                    data.innerHTML = j;
+                    data.className = 'numeric';
+                }
                 row.appendChild(data);
             }
-            table.appendChild(row);
+            tab.appendChild(row);
         }
-        return table;
+        return tab;
     }
 
     var app = document.getElementById('app');
@@ -47,17 +58,24 @@ window.onload = function () {
     var buildTable = function (event) {
         event.preventDefault();
         var options = getValue();
-        var table = createTable(options.rows, options.cells, options.isCaption);
+        var table = createFullTable(options);
         table.className = 'table';
         table.setAttribute('contenteditable', 'true');
         app.appendChild(table);
+        setStorage(options);
     }
 
     var createBtn = document.getElementById('creation');
     createBtn.addEventListener('click', buildTable, false);
 
     var form = document.forms[0];
-    form.addEventListener('change', function(event){
+    form.addEventListener('change', function (event) {
 
     }, false)
+
+    //  localStorage for save option in session (if user by accident close tab or browser), or for more user experience.
+    function setStorage(opt) {
+        var storage = JSON.stringify(opt);
+        localStorage.setItem('options', storage);
+    }
 };
