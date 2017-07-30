@@ -1,39 +1,95 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Table-generator</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div id="container">
+        <div id="main">
+            <div class="inner">
+                <!--Header-->
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+                <header id="header">
+                    <a href="#"><strong>Table-generator</strong> by FreAK19</a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon fa fa-vk"><span class="label">Vkontakte</span></a></li>
+                    </ul>
+                </header>
+                <div id="app">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+                </div>
+            </div>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+                <div class="linked__footer">
+                    <p>made with ❤ by <a href="https://github.com" class="github__link copyright" >Andrew</a></p>
+                </div>
+        </div>
+        <aside id="sidebar">
+            <div class="inner">
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+                <!-- Search -->
+                <div class="logo">
+                    <h1>Table-generator</h1>
+                </div>
+
+                <!-- Options -->
+
+                <div id="options">
+                    <header class="major">
+                        <h2>Options</h2>
+                    </header>
+                    <form action="" id="form">
+                        <div class="form__item">
+                            <input type="number" id="table_cell" placeholder="Table-cell">
+                        </div>
+                        <div class="form__item">
+                            <input type="number" id="table_row" placeholder="Table-row">
+                        </div>
+                        <div class="form__item">
+                            <input type="checkbox" id="caption" checked="checked">
+                            <label for="caption">Include caption</label><br>
+                        </div>
+                        <div class="form__item">
+                            <input type="checkbox" id="numhorz">
+                            <label for="numhorz">Numeric horizontal</label><br>
+                        </div>
+                        <div class="form__item">
+                            <input type="checkbox" id="numvert">
+                            <label for="numvert">Numeric vertical</label>
+                        </div>
+                        <div class="btn__group">
+                            <button class="button">Create</button>
+                            <button class="button">Generate HTML</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Copyright. All rights reserved.</p>
+                </footer>
+
+            </div>
+        </aside>
+
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<script src="js/main.js"></script>
+</body>
 </html>
