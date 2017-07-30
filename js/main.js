@@ -5,6 +5,7 @@
 
 window.onload = function () {
     //  take values from #option field
+
     function getValue() {
         var rows = document.getElementById('table_row').value || 2;
         var cells = document.getElementById('table_cell').value || 2;
@@ -70,8 +71,9 @@ window.onload = function () {
 
     var form = document.forms[0];
     form.addEventListener('change', function (event) {
-
-    }, false)
+        var options = getValue();
+        console.log(options);
+    }, false);
 
     //  localStorage for save option in session (if user by accident close tab or browser), or for more user experience.
     function setStorage(opt) {
