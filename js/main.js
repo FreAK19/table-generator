@@ -25,13 +25,13 @@ window.onload = function () {
     function createCaption(table, isCaption) {
         if (isCaption) {
             var cap = document.createElement('caption');
-            cap.innerHTML = 'Table header';
+            cap.innerHTML = 'Caption';
             table.appendChild(cap);
         }
         return table;
     }
 
-    function createFullTable(options) {
+    function createTable(options) {
         var table = document.createElement('table');
         var tab = createCaption(table, options.isCaption);
         for (var i = 0; i < options.rows; i += 1) {
@@ -56,28 +56,23 @@ window.onload = function () {
     var app = document.getElementById('app');
 
 
-    var buildTable = function (event) {
+    var drawTable = function (event) {
         event.preventDefault();
         var options = getValue();
-        var table = createFullTable(options);
+        var table = createTable(options);
         table.className = 'table';
         table.setAttribute('contenteditable', 'true');
         app.appendChild(table);
-        setStorage(options);
     }
 
     var createBtn = document.getElementById('creation');
-    createBtn.addEventListener('click', buildTable, false);
+    createBtn.addEventListener('click', drawTable, false);
 
     var form = document.forms[0];
     form.addEventListener('change', function (event) {
-        var options = getValue();
-        console.log(options);
+        if (app.firstElementChild !== null) {
+            app.removeChild(app.firstElementChild);
+            drawTable(event);
+        }
     }, false);
-
-    //  localStorage for save option in session (if user by accident close tab or browser), or for more user experience.
-    function setStorage(opt) {
-        var storage = JSON.stringify(opt);
-        localStorage.setItem('options', storage);
-    }
 };
