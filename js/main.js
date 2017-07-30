@@ -33,6 +33,8 @@ window.onload = function () {
             }
             table.appendChild(row);
         }
+        table.className = 'table';
+        table.setAttribute('contenteditable', 'true');
         return table;
     }
 
@@ -41,8 +43,8 @@ window.onload = function () {
     var createBtn = document.getElementById('creation');
     createBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        var oprions = getValue();
-        var table = createTable(oprions.rows, oprions.cells);
+        var options = getValue();
+        var table = createTable(options.rows, options.cells);
         app.appendChild(table);
     });
 }
