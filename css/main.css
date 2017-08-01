@@ -51,7 +51,6 @@ body, input, select, textarea {
     overflow-x: scroll;
 }
 
-
 /* Table */
 
 .table {
@@ -60,6 +59,7 @@ body, input, select, textarea {
     font-size: 1.8em;
     margin-bottom: 50px;
 }
+
 .table tr td {
     border: 2px solid #009688;
     height: 50px;
@@ -67,10 +67,12 @@ body, input, select, textarea {
     min-width: 100px;
     padding: 0 10px;
 }
+
 .table tr td.numeric {
     background: #f4f4f4;
     font-weight: bold;
 }
+
 /* Header */
 
 #header {
@@ -187,6 +189,47 @@ body, input, select, textarea {
     fill: #a9a9a9;
 }
 
+/*Popup*/
+
+#popup {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 37%;
+    background: #eee;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+.popup__container > form {
+    margin-bottom: 35px;
+}
+.close {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: #e7e0e0;
+    text-align: center;
+    border-radius: 50%;
+    transition: background .3s;
+}
+.close:hover {
+    background: #514b4b;
+    cursor: pointer;
+    color: #f9f9f9;
+}
+#js-result {
+    padding: 20px;
+    height: 150px;
+}
+textarea:focus {
+    border-color: #F56A6A;
+}
 /*  Footer  */
 
 #footer {
@@ -214,7 +257,7 @@ body, input, select, textarea {
 
 /* Form */
 
-input[type="number"] {
+input[type="number"], textarea {
     height: 2.5em;
     background: #ffffff;
     border-radius: 0.375em;
@@ -225,6 +268,7 @@ input[type="number"] {
     padding: 0 1em;
     text-decoration: none;
     width: 100%;
+    resize: none;
 
 }
 
@@ -291,4 +335,9 @@ input[type="checkbox"] + label:hover {
     color: #ffffff;
     border: none;
     border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn__group .button:hover {
+    background: #329091;
 }
