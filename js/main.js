@@ -1,5 +1,6 @@
 // data of creation 30.07.2017
 //Create by Andrew
+// only by native JS(vanilla.js)
 /*********************/
 
 
@@ -68,7 +69,7 @@ window.onload = function () {
     var createBtn = document.getElementById('creation');
     createBtn.addEventListener('click', drawTable, false);
 
-    var form = document.forms[0];
+    var form = document.forms[1];
     form.addEventListener('change', function (event) {
         if (app.firstElementChild !== null) {
             app.removeChild(app.firstElementChild);
@@ -101,4 +102,15 @@ window.onload = function () {
     getHtmlBtn.addEventListener('click', showPopup, false);
     close.addEventListener('click', hidePopup, false);
     exitBtn.addEventListener('click', hidePopup, false);
+
+    //  resulting table in textarea
+
+    var result = document.querySelector('#js-result');
+    var copyBtn = document.querySelector('.btn-copy');
+    copyBtn.addEventListener('click', function () {
+        if (document.queryCommandSupported('copy')) {
+            var text = result.select();
+            document.execCommand('copy');
+        }
+    }, false);
 };
