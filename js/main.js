@@ -75,4 +75,30 @@ window.onload = function () {
             drawTable(event);
         }
     }, false);
+
+
+    //  event lister for close popup
+
+    var popup = document.querySelector('#popup');
+    var exitBtn = document.querySelector('.btn-close');
+    var close = document.querySelector('.close');
+    var getHtmlBtn = document.querySelector('#generation');
+
+    function hidePopup(e) {
+        e.preventDefault();
+        popup.style.opacity = '0';
+        setTimeout(function () {
+            popup.style.display = 'none';
+        }, 600);
+    }
+    function showPopup(e) {
+        e.preventDefault();
+        setTimeout(function () {
+            popup.style.opacity = '1';
+        }, 5);
+        popup.style.display = 'block';
+    }
+    getHtmlBtn.addEventListener('click', showPopup, false);
+    close.addEventListener('click', hidePopup, false);
+    exitBtn.addEventListener('click', hidePopup, false);
 };
