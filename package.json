@@ -1,0 +1,31 @@
+{
+  "name": "table-generator",
+  "version": "1.0.0",
+  "description": "simple generator HTML tables",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreAK19/table-generator.git"
+  },
+  "keywords": [
+    "table-generator",
+    "generator-html"
+  ],
+  "author": "Kiri4encko Andrew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FreAK19/table-generator/issues"
+  },
+  "homepage": "https://github.com/FreAK19/table-generator#readme"
+}
