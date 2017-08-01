@@ -84,6 +84,9 @@ window.onload = function () {
     var exitBtn = document.querySelector('.btn-close');
     var close = document.querySelector('.close');
     var getHtmlBtn = document.querySelector('#generation');
+    var result = document.querySelector('#js-result');
+    var copyBtn = document.querySelector('.btn-copy');
+    var text = '';
 
     function hidePopup(e) {
         e.preventDefault();
@@ -92,12 +95,18 @@ window.onload = function () {
             popup.style.display = 'none';
         }, 600);
     }
+
     function showPopup(e) {
         e.preventDefault();
         setTimeout(function () {
             popup.style.opacity = '1';
         }, 5);
         popup.style.display = 'block';
+
+        //  copy
+
+        text = app.innerHTML;
+        result.value = text;
     }
     getHtmlBtn.addEventListener('click', showPopup, false);
     close.addEventListener('click', hidePopup, false);
@@ -105,11 +114,9 @@ window.onload = function () {
 
     //  resulting table in textarea
 
-    var result = document.querySelector('#js-result');
-    var copyBtn = document.querySelector('.btn-copy');
     copyBtn.addEventListener('click', function () {
         if (document.queryCommandSupported('copy')) {
-            var text = result.select();
+            result.select();
             document.execCommand('copy');
         }
     }, false);
